@@ -1,0 +1,47 @@
+def mean(M):
+    total = 0
+    for x in M:
+        total += x #total = total +x
+    mean = total / len(M)
+    return mean
+
+
+def median(M):
+    M.sort()
+    if len(M)%2 != 0:
+        median = M[int(len(M)/2)]
+    else:
+        median = M[(int(len(M)/2)) - 1] +  M[int(len(M)/2)]
+        median = median/2
+    return median
+
+
+def mode(M):
+    counter = 0
+    num = M[0]
+
+    for i in M:
+        curr_frequency = M.count(i)
+        if(curr_frequency > counter):
+            counter = curr_frequency
+            num = i
+        if len(set(M)) == len(M):
+            return 'there is no mode'
+
+    return num
+
+
+number_list = []
+
+while(True):
+    ask = input('Enter a number and say "stop" to end: ')
+
+    if ask == 'stop':
+        break
+    number_list.append(int(ask))
+
+mean = str(mean(number_list))
+median = str(median(number_list))
+mode = str(mode(number_list))
+
+print('mean: '+ mean + '\n' + 'median: ' + median + '\n' + 'mode: ' + mode)
