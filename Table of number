@@ -1,0 +1,7 @@
+name=str(input("Enter your good name:"))
+print("Welcome", name, "in Math Classes.")
+num=int(input("Enter the number of table:"))
+print("Table of", num)
+for i in range(1, 11):
+    print(num,"X", i, "=", num*i)
+print("Thank you" , name,)
